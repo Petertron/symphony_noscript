@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="symphony_noscript" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+    <name>Symphony Noscript</name>
+    <description>Redirects backend pages when JavaScript is disabled.</description>
+    <repo type="github">https://github.com/Petertron/symphony_noscript</repo>
+    <types>
+        <type>Workflow</type>
+    </types>
+    <authors>
+        <author>
+            <name github="Petertron" symphony="Petertron">Peter Skirenko</name>
+        </author>
+    </authors>
+    <releases>
+        <release version="1.0.0" date="2014-12-29" min="2.3">
+            - Initial release.
+        </release>
+    </releases>
+</extension> 
