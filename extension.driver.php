@@ -39,22 +39,24 @@ class extension_Symphony_noscript extends Extension
     */
     public function adminPagePreGenerate(&$context)
     {
+        $page = $context['oPage'];
+        if (!is_object($page->Head)) return;
+
         $callback = Symphony::Engine()->getPageCallback();
-        if ($callback['driver'] != 'noscript') {
-            // Modify page object
-            $page = $context['oPage'];
-            $noscript = new XMLElement('noscript');
-            $noscript->appendChild(
-                new XMLElement(
-                    'meta',
-                    null,
-                    array(
-                        'http-equiv' => 'refresh',
-                        'content' => '0;URL=' . SYMPHONY_URL . '/noscript/'
-                    )
+        if ($callback['driver'] == 'noscript') return;
+
+        // Modify page object
+        $noscript = new XMLElement('noscript');
+        $noscript->appendChild(
+            new XMLElement(
+                'meta',
+                null,
+                array(
+                    'http-equiv' => 'refresh',
+                    'content' => '0;URL=' . SYMPHONY_URL . '/noscript/'
                 )
-            );
-            $page->Head->prependChild($noscript);
-        }
+            )
+        );
+        $page->Head->prependChild($noscript);
     }
 }

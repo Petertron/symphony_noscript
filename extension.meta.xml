@@ -12,6 +12,9 @@
         </author>
     </authors>
     <releases>
+        <release version="1.0.1" date="2015-02-06" min="2.3">
+            - Stop extension interfering with AJAX calls.
+        </release>
         <release version="1.0.0" date="2014-12-29" min="2.3">
             - Initial release.
         </release>
